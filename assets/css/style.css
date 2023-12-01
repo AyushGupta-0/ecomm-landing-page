@@ -1290,7 +1290,7 @@ label {
 }
 .header .navbar.affix {
   top: 0;
-  background-color: transparent;
+  background-color: white;
 }
 .header .navbar-nav {
   display: none;

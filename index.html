@@ -1,3 +1,38 @@
+<!-- <?php
+if(isset($_POST['submit'])){
+	$firstname = $_POST["first-name"];
+	$lastname = $_POST["last-name"];
+	$email = $_POST["email"];
+
+	$host = "localhost";
+	$user = "root";
+	$pass = "";
+	$dbname = "printertech-landingpage";
+
+	$conn = mysqli_connect($host,$user,$pass,$dbname);
+
+	$sql = "INSERT INTO request(firstname,lastname,email) values('$fistname','$lastname','$email')";
+	mysqli_query($conn,$sql);
+}
+
+?> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 
@@ -50,12 +85,12 @@
 			<nav id="primary-menu" class="navbar navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+						<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</button>
+						</button> -->
 						<a class="logo" href="index.html">
 							<img class="logo-dark" src="assets/images/logo/Landing-page-logo1.png" alt="Vero Logo" style="height: 85px; margin-left: -160px;">
 							<img class="logo-light" src="assets/images/logo//Landing-page-logo1.png" alt="Vero Logo" style="height: 85px; margin-left: -160px;">
@@ -95,8 +130,8 @@
 							<h6>
 								<ul>
 									<li style="margin-bottom: 20px;">24x7 Tech Support</li>
-									<li style="margin-bottom: 20px;"> We Are Just 1 Call Away</li>
-									<li style="margin-bottom: 20px;">Call a Tech Support - +1 985 664 9024</li>
+									<li style="margin-bottom: 20px;"> We Are Just a Call Away</li>
+									<li style="margin-bottom: 20px;">Call @ +1 985 664 9024</li>
 									
 								</ul>
 						</h6>
@@ -108,21 +143,25 @@
 							<div class="slide--action">
 								<h6>Get free updates</h6>
 								<p>Supporting call-to-action goes here</p>
-								<form class="mb-0">
+								<form class="mb-0" action="https://formspree.io/f/mleyyaqw" method="POST" >
 									<div>
 										<label>first name</label>
-										<input type="text" name="first-name" class="form-control">
-									</div>
-									<div>
-										<label>last name</label>
-										<input type="text" name="last-name" class="form-control">
+										<input type="text" id="name" name="name" class="form-control" required>
 									</div>
 									<div>
 										<label>Email</label>
-										<input type="text" name="email" class="form-control">
+										<input type="email" id="email" name="email" class="form-control" required>
 									</div>
 									<div>
-										<input type="submit" class="btn btn--primary btn--block mt-10" value="Contact us now">
+										<label>Contact</label>
+										<input type="tel" id="contact" name="contact" class="form-control" required>
+									</div>
+									<div>
+										<label>Message</label>
+										<input type="text" id="message" name="message" class="form-control" required >
+									</div>
+									<div>
+										<input type="submit" name="submit" class="btn btn--primary btn--block mt-10" value="Contact us now">
 									</div>
 								</form>
 							</div>
@@ -336,9 +375,9 @@
 									<h5>Gwen</h5>
 								</div>
 								<div class="testimonial--job">
-									Head of Technology at Devsol
+									Customer
 								</div>
-								<p>"PrinterTech's products goes above and beyond in terms of customer service. Their responsive and knowledgeable support team promptly addressed my inquiries and provided me with personalized recommendations based on my printing needs. The website also offers a live chat feature, allowing for real-time assistance. I was thoroughly impressed with the level of customer support provided by PrinterTech's website, making it a top choice for all my printer-related needs."</p>
+								<p>PrinterTech's products goes above and beyond in terms of customer service. Their responsive and knowledgeable support team promptly addressed my inquiries and provided me with personalized recommendations based on my printing needs.</p>
 							</div>
 						</div>
 					</div>
@@ -354,9 +393,9 @@
 									<h5>Ryan</h5>
 								</div>
 								<div class="testimonial--job">
-									Orpal's CEO
+									Customer
 								</div>
-								<p>"PrinterTech offers a seamless purchasing process. From selecting the desired printer to completing the checkout, the website's user-friendly interface made the entire transaction smooth and efficient. Additionally, the website provided multiple secure payment options, ensuring a safe and reliable purchase. I highly recommend PrinterTech's website for anyone looking to buy a printer online."</p>
+								<p>PrinterTech offers a seamless purchasing process. From selecting the desired printer to completing the checkout, the website's user-friendly interface made the entire transaction smooth and efficient.</p>
 							</div>
 						</div>
 					</div>
@@ -381,21 +420,25 @@
 					<div class="slide--action" >
 						<h6>Get free updates</h6>
 						<p>Supporting call-to-action goes here</p>
-						<form class="mb-0">
+						<form class="mb-0" action="https://formspree.io/f/mleyyaqw" method="POST" >
 							<div>
 								<label>first name</label>
-								<input type="text" name="first-name" class="form-control">
-							</div>
-							<div>
-								<label>last name</label>
-								<input type="text" name="last-name" class="form-control">
+								<input type="text" name="name" class="form-control" required>
 							</div>
 							<div>
 								<label>Email</label>
-								<input type="text" name="email" class="form-control">
+								<input type="email" name="email" class="form-control" required>
 							</div>
 							<div>
-								<input type="submit" class="btn btn--primary btn--block mt-10" value="Contact us now">
+								<label>Contact</label>
+								<input type="tel" name="contact" class="form-control" required>
+							</div>
+							<div>
+								<label>Message</label>
+								<input type="text" name="message" class="form-control" required>
+							</div>
+							<div>
+								<input type="submit" name="submit" class="btn btn--primary btn--block mt-10" value="Contact us now">
 							</div>
 						</form>
 					</div>
@@ -414,7 +457,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div class="footer--copyright text-center">
-							<span>&copy; 2017 , crafted With Printer Tech </span>
+							<span>&copy; 2023 , Designed by Printer Tech </span>
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
@@ -428,6 +471,24 @@
 
 	<!-- Footer Scripts
 	============================================= -->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<!-- <script >
+		function sendEmail(){
+			console.log("helllllllllllllllllo")
+			Email.send({
+    Host : "smtp.gmail.com",
+    Username : "vickyinfinixbackup@gmail.com",
+    Password : "Ayush@2307",
+    To : 'ayushwork777@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Enquiry",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+		}
+	</script> -->
 	<script src="assets/js/jquery-2.2.4.min.js"></script>
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/functions.js"></script>
